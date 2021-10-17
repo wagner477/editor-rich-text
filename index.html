@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>OncEditor</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>OncEditor</h1>
+    <input type="text" placeholder="Title">
+    <div class="options">
+      <button id="bold" onClick="transform('bold', null, this.id)">
+        <i class="fas fa-bold"></i>
+      </button>
+      <button id="italic" onClick="transform('italic', null, this.id)">
+        <i class="fas fa-italic"></i>
+      </button>
+      <button id="strike" onClick="transform('strikeThrough', null, this.id)">
+        <i class="fas fa-strikethrough"></i>
+      </button>
+      <button id="underline" onClick="transform('underline', null, this.id)">
+        <i class="fas fa-underline"></i>
+      </button>
+      <div class="seperator"></div>
+      <button id="left" onClick="transform('justifyLeft', null, this.id)">
+        <i class="fas fa-align-left"></i>
+      </button>
+      <button id="center" onClick="transform('justifyCenter', null, this.id)">
+        <i class="fas fa-align-center"></i>
+      </button>
+      <button id="right" onClick="transform('justifyRight', null, this.id)">
+        <i class="fas fa-align-right"></i>
+      </button>
+      <div class="seperator"></div>
+      <button id="list-ol" onClick="transform('insertOrderedList', null, this.id)">
+        <i class="fas fa-list-ol"></i>
+      </button>
+      <button id="list-ul" onClick="transform('insertUnorderedList', null, this.id)">
+        <i class="fas fa-list-ul"></i>
+      </button>
+      <div class="seperator"></div>
+      <select onChange="transform('fontName', this.value)">
+        <option disabled default>Font</option>
+        <option value="Times New Roman">Times</option>
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Arial">Verdana</option>
+      </select>
+      <div class="seperator"></div>
+      <input type="number" onChange="transform('fontSize', this.value)" value="3" max="7" min="1"></input>
+    </div>
+    <iframe name="editor" id="editor"></iframe>
+  </div>
+
+
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+    integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+    crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
